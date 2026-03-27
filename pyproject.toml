@@ -15,6 +15,7 @@ dependencies = [
     "ipykernel>=6.20.0",
     "python-dotenv>=1.0.0",
     "langfuse>=3.0.0",
+    "langsmith>=0.1.0",
     "jupyterlab>=4.0.0",
 ]
 
