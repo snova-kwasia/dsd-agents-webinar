@@ -22,14 +22,14 @@ Build production-ready AI agents from the ground up using LangGraph and SambaNov
 
 **Deep Agents from Scratch** is a 6-session webinar series by Data Science Dojo and SambaNova that teaches you to build sophisticated AI agents step by step — from a simple ReAct loop to a full agent system with memory, tools, evaluation, and more.
 
-| Session | Topic | Notebook |
-|---------|-------|----------|
-| 1 | The Rise of the Deep Agent | `session_1/0_create_agent.ipynb` |
-| 2 | Agent Architecture Deep Dive | Coming soon |
-| 3 | Memory & Context Management | Coming soon |
-| 4 | Tools & Agent Skills | Coming soon |
-| 5 | Multi-Agent Systems | Coming soon |
-| 6 | Evaluation & Production | Coming soon |
+| Session | Topic | Notebook | Recording | Date |
+|---------|-------|----------|-----------|------|
+| 1 | The Rise of the Deep Agent | [`session_1/0_create_agent.ipynb`](notebooks/session_1/0_create_agent.ipynb) | [Watch](https://www.youtube.com/watch?v=H_h9kmKAcJc) | Mar 4, 2026 |
+| 2 | Agent Architecture Deep Dive | [`session_2/1_build_first_agent.ipynb`](notebooks/session_2/1_build_first_agent.ipynb) | [Watch](https://www.youtube.com/watch?v=ZxOkyYz95s4) | Mar 25, 2026 |
+| 3 | Memory & Context Management | Coming soon | TBD | TBD |
+| 4 | Tools & Agent Skills | Coming soon | TBD | TBD |
+| 5 | Multi-Agent Systems | Coming soon | TBD | TBD |
+| 6 | Evaluation & Production | Coming soon | TBD | TBD |
 
 ---
 
@@ -46,7 +46,7 @@ Build production-ready AI agents from the ground up using LangGraph and SambaNov
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/dsd-deep-agents.git
+   git clone https://github.com/snova-kwasia/dsd-agents-webinar.git
    cd dsd-deep-agents
    ```
 
