@@ -69,6 +69,7 @@ pytest tests/ -v
 
 ## Resources
 
+- [SambaNova](https://sambanova.ai/) — Company homepage
 - [SambaNova Cloud](https://cloud.sambanova.ai/) — API documentation and keys
 - [SambaNova Documentation](https://docs.sambanova.ai/) — Full platform docs
 - [Data Science Dojo](https://datasciencedojo.com/) — Webinar series host
