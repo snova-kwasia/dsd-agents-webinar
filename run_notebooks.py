@@ -1,25 +1,39 @@
 #!/usr/bin/env python3
 """
-Script to run Jupyter notebooks for sessions 1 and 2 and generate a test report.
+Script to run Jupyter notebooks for all sessions and generate a test report.
+Dynamically discovers all session notebooks in the notebooks directory.
 """
 
 import subprocess
 import sys
 import os
+import re
 from datetime import datetime
 from pathlib import Path
 
 # Set up paths
 NOTEBOOKS_DIR = Path("/workspace/dsd-agents-webinar/notebooks")
 OUTPUT_DIR = Path("/workspace/dsd-agents-webinar/notebook_output")
-SESSION_1_NOTEBOOK = NOTEBOOKS_DIR / "session_1" / "0_create_agent.ipynb"
-SESSION_2_NOTEBOOK = NOTEBOOKS_DIR / "session_2" / "1_build_first_agent.ipynb"
+
+
+def discover_session_notebooks() -> list[Path]:
+    """Dynamically discover all session notebooks."""
+    notebooks = []
+    
+    # Look for session directories (session_1, session_2, etc.)
+    for session_dir in sorted(NOTEBOOKS_DIR.iterdir()):
+        if session_dir.is_dir() and session_dir.name.startswith("session_"):
+            # Find all .ipynb files in the session directory
+            for notebook_file in sorted(session_dir.glob("*.ipynb")):
+                notebooks.append(notebook_file)
+    
+    return notebooks
 
 
 def run_notebook(notebook_path: Path, output_dir: Path) -> dict:
     """Run a Jupyter notebook and return the result."""
     print(f"\n{'='*60}")
-    print(f"Running notebook: {notebook_path.name}")
+    print(f"Running notebook: {notebook_path}")
     print(f"{'='*60}\n")
     
     # Create output directory if it doesn't exist
@@ -49,7 +63,7 @@ def run_notebook(notebook_path: Path, output_dir: Path) -> dict:
         )
         
         return {
-            "notebook": notebook_path.name,
+            "notebook": str(notebook_path),
             "success": result.returncode == 0,
             "stdout": result.stdout,
             "stderr": result.stderr,
@@ -57,7 +71,7 @@ def run_notebook(notebook_path: Path, output_dir: Path) -> dict:
         }
     except subprocess.TimeoutExpired:
         return {
-            "notebook": notebook_path.name,
+            "notebook": str(notebook_path),
             "success": False,
             "stdout": "",
             "stderr": "Notebook execution timed out after 15 minutes",
@@ -65,7 +79,7 @@ def run_notebook(notebook_path: Path, output_dir: Path) -> dict:
         }
     except Exception as e:
         return {
-            "notebook": notebook_path.name,
+            "notebook": str(notebook_path),
             "success": False,
             "stdout": "",
             "stderr": str(e),
@@ -143,16 +157,24 @@ def main():
     # Create output directory
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     
+    # Dynamically discover all session notebooks
+    notebooks = discover_session_notebooks()
+    
+    if not notebooks:
+        print("No session notebooks found!")
+        print(f"Looking in: {NOTEBOOKS_DIR}")
+        return 1
+    
+    print(f"\nDiscovered {len(notebooks)} notebook(s):")
+    for nb in notebooks:
+        print(f"  - {nb}")
+    
     # Run notebooks
     results = []
     
-    # Run Session 1
-    result1 = run_notebook(SESSION_1_NOTEBOOK, OUTPUT_DIR)
-    results.append(result1)
-    
-    # Run Session 2
-    result2 = run_notebook(SESSION_2_NOTEBOOK, OUTPUT_DIR)
-    results.append(result2)
+    for notebook_path in notebooks:
+        result = run_notebook(notebook_path, OUTPUT_DIR)
+        results.append(result)
     
     # Generate report
     report = generate_report(results)
