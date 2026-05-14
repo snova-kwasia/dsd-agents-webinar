@@ -10,7 +10,7 @@
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.6+-green.svg)](https://github.com/langchain-ai/langgraph)
-[![SambaNova](https://img.shields.io/badge/SambaNova-MiniMax--M2.5-purple.svg)](https://cloud.sambanova.ai/)
+[![SambaNova](https://img.shields.io/badge/SambaNova-MiniMax--M2.7-purple.svg)](https://cloud.sambanova.ai/)
 
 Build production-ready AI agents from the ground up using LangGraph and SambaNova Cloud.
 
@@ -26,10 +26,10 @@ Build production-ready AI agents from the ground up using LangGraph and SambaNov
 |---------|-------|----------|-----------|------|
 | 1 | The Rise of the Deep Agent | [`session_1/0_create_agent.ipynb`](notebooks/session_1/0_create_agent.ipynb) | [Watch](https://www.youtube.com/watch?v=H_h9kmKAcJc) | Mar 4, 2026 |
 | 2 | Agent Architecture Deep Dive | [`session_2/1_build_first_agent.ipynb`](notebooks/session_2/1_build_first_agent.ipynb) | [Watch](https://www.youtube.com/watch?v=ZxOkyYz95s4) | Mar 25, 2026 |
-| 3 | Memory & Context Management | Coming soon | TBD | TBD |
-| 4 | Tools & Agent Skills | Coming soon | TBD | TBD |
-| 5 | Multi-Agent Systems | Coming soon | TBD | TBD |
-| 6 | Evaluation & Production | Coming soon | TBD | TBD |
+| 3 | Memory & Context Management | [`session_3/1_context_engineering.ipynb`](notebooks/session_3/1_context_engineering.ipynb) | TBD | Apr 15, 2026 |
+| 4 | Agent Skills & MCP | [`session_4/1_agent_skills.ipynb`](notebooks/session_4/1_agent_skills.ipynb) | TBD | May 13, 2026 |
+| 5 | Multi-Agent Workflows | Coming soon | TBD | May 27, 2026 |
+| 6 | Evaluation & Production | Coming soon | TBD | Jun 10, 2026 |
 
 ---
 

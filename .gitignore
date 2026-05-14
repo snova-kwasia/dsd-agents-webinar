@@ -8,3 +8,10 @@ __pycache__/
 dist/
 build/
 notebook_output/
+
+# Session 4 — agent runtime artifacts (regenerated on every notebook run)
+notebooks/session_4/outputs/
+notebooks/session_4/skills/daily-standup/
+notebooks/session_4/sample.pdf
+notebooks/session_4/extract_pdf.py
+notebooks/session_4/tmp/
