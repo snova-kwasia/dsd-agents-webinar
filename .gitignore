@@ -15,3 +15,8 @@ notebooks/session_4/skills/daily-standup/
 notebooks/session_4/sample.pdf
 notebooks/session_4/extract_pdf.py
 notebooks/session_4/tmp/
+
+# Session 5 — agent runtime artifacts (regenerated on every notebook run)
+notebooks/session_5/outputs/
+notebooks/session_5/incident_data/
+notebooks/session_5/*.png
