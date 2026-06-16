@@ -29,7 +29,7 @@ Build production-ready AI agents from the ground up using LangGraph and SambaNov
 | 3 | Memory & Context Management | [`session_3/1_context_engineering.ipynb`](notebooks/session_3/1_context_engineering.ipynb) | TBD | Apr 15, 2026 |
 | 4 | Agent Skills & MCP | [`session_4/1_agent_skills.ipynb`](notebooks/session_4/1_agent_skills.ipynb) | TBD | May 13, 2026 |
 | 5 | Multi-Agent Workflows | [`session_5/1_multi_agent_workflows.ipynb`](notebooks/session_5/1_multi_agent_workflows.ipynb) | TBD | June 10, 2026 |
-| 6 | Evaluation & Production | Coming soon | TBD | July 1, 2026 |
+| 6 | Evaluation & Production | [`session_6/1_evaluation_production.ipynb`](notebooks/session_6/1_evaluation_production.ipynb) | TBD | July 1, 2026 |
 
 ---
 

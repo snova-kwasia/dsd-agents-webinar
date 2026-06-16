@@ -20,3 +20,6 @@ notebooks/session_4/tmp/
 notebooks/session_5/outputs/
 notebooks/session_5/incident_data/
 notebooks/session_5/*.png
+
+# Session 6 runtime
+notebooks/session_6/outputs/
