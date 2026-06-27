@@ -79,6 +79,8 @@ def _minute_label(offset: int) -> str:
     return f"{total // 60:02d}:{total % 60:02d}"
 
 
+# Public alias — shared with Session-6 eval notebook so both modules use one definition.
+minute_label = _minute_label
 def make_dashboard_png(path: str = "outputs/dashboard.png") -> str:
     """Render a Grafana-style dashboard screenshot of the incident and save it.
 
