@@ -26,9 +26,9 @@ Build production-ready AI agents from the ground up using LangGraph and SambaNov
 |---------|-------|----------|-----------|------|
 | 1 | The Rise of the Deep Agent | [`session_1/0_create_agent.ipynb`](notebooks/session_1/0_create_agent.ipynb) | [Watch](https://www.youtube.com/watch?v=H_h9kmKAcJc) | Mar 4, 2026 |
 | 2 | Agent Architecture Deep Dive | [`session_2/1_build_first_agent.ipynb`](notebooks/session_2/1_build_first_agent.ipynb) | [Watch](https://www.youtube.com/watch?v=ZxOkyYz95s4) | Mar 25, 2026 |
-| 3 | Memory & Context Management | [`session_3/1_context_engineering.ipynb`](notebooks/session_3/1_context_engineering.ipynb) | TBD | Apr 15, 2026 |
-| 4 | Agent Skills & MCP | [`session_4/1_agent_skills.ipynb`](notebooks/session_4/1_agent_skills.ipynb) | TBD | May 13, 2026 |
-| 5 | Multi-Agent Workflows | [`session_5/1_multi_agent_workflows.ipynb`](notebooks/session_5/1_multi_agent_workflows.ipynb) | TBD | June 10, 2026 |
+| 3 | Memory & Context Management | [`session_3/1_context_engineering.ipynb`](notebooks/session_3/1_context_engineering.ipynb) | [Watch](https://www.youtube.com/watch?v=MF8Qf0VmzIE) | Apr 15, 2026 |
+| 4 | Agent Skills & MCP | [`session_4/1_agent_skills.ipynb`](notebooks/session_4/1_agent_skills.ipynb) | [Watch](https://www.youtube.com/watch?v=vYFX7JhOJgw) | May 13, 2026 |
+| 5 | Multi-Agent Workflows | [`session_5/1_multi_agent_workflows.ipynb`](notebooks/session_5/1_multi_agent_workflows.ipynb) | [Watch](https://www.youtube.com/watch?v=VN0OEC3jNrs) | June 10, 2026 |
 | 6 | Evaluation & Production | [`session_6/1_evaluation_production.ipynb`](notebooks/session_6/1_evaluation_production.ipynb) | TBD | July 1, 2026 |
 
 ---
