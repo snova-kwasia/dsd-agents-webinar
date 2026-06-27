@@ -1,0 +1,5 @@
+# Available skills
+
+- **jupyter-notebook**: Use when the user asks to create, scaffold, or edit Jupyter notebooks (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates and run the helper script `new_notebook.py` to generate a clean starting notebook.
+
+When a task matches a skill, read its `SKILL.md` (under `.managed-skills/<name>/`) and follow it. Do not read large files wholesale into context — summarise instead.
