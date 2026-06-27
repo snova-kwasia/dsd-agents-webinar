@@ -11,9 +11,10 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-# Set up paths
-NOTEBOOKS_DIR = Path("/workspace/dsd-agents-webinar/notebooks")
-OUTPUT_DIR = Path("/workspace/dsd-agents-webinar/notebook_output")
+# Set up paths - use relative paths from script location for portability
+_SCRIPT_DIR = Path(__file__).parent.resolve()
+NOTEBOOKS_DIR = _SCRIPT_DIR / "notebooks"
+OUTPUT_DIR = _SCRIPT_DIR / "notebook_output"
 
 
 def discover_session_notebooks() -> list[Path]:
@@ -59,7 +60,7 @@ def run_notebook(notebook_path: Path, output_dir: Path) -> dict:
             capture_output=True,
             text=True,
             timeout=900,  # 15 minutes timeout
-            cwd=str(NOTEBOOKS_DIR.parent)
+            cwd=str(NOTEBOOKS_DIR)  # Run from notebooks/ so relative paths resolve
         )
         
         return {
@@ -141,9 +142,17 @@ def main():
     print("Starting notebook execution test...")
     print(f"Working directory: {os.getcwd()}")
     
-    # Load environment variables
+    # Load environment variables - try multiple locations for portability
     from dotenv import load_dotenv
-    load_dotenv("/workspace/dsd-agents-webinar/.env", override=True)
+    _env_locations = [
+        _SCRIPT_DIR / ".env",
+        _SCRIPT_DIR.parent / ".env",
+        Path.cwd() / ".env",
+    ]
+    for _env_loc in _env_locations:
+        if _env_loc.exists():
+            load_dotenv(_env_loc, override=True)
+            break
     
     # Check API keys
     required_keys = ["SAMBANOVA_API_KEY", "TAVILY_API_KEY"]
@@ -189,10 +198,10 @@ def main():
     
     # Return exit code based on results
     if all(r['success'] for r in results):
-        print("\n✓ All notebooks executed successfully!")
+        print("\n\u2713 All notebooks executed successfully!")
         return 0
     else:
-        print("\n✗ Some notebooks failed to execute.")
+        print("\n\u2717 Some notebooks failed to execute.")
         return 1
 
 
