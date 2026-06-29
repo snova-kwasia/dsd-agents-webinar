@@ -14,6 +14,11 @@
 
 Build production-ready AI agents from the ground up using LangGraph and SambaNova Cloud.
 
+## About
+
+This repository contains the notebooks and resources for the **Deep Agents from Scratch** webinar series—a 6-session hands-on course on building production-ready AI agents with LangGraph and SambaNova Cloud. Each session covers a core agent concept through practical notebooks, from simple ReAct loops to multi-agent systems with memory, tools, and evaluation.
+
+
 </div>
 
 ---
