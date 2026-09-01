@@ -33,6 +33,41 @@ Build production-ready AI agents from the ground up using LangGraph and SambaNov
 
 ---
 
+## Season 2 — Coding Agents That Improve
+
+*Build, evaluate, and self-improve coding agents on SambaNova.* A second 6-part series, presented by
+**Varun Krishna** and **Kwasi Ankomah**, on the architecture behind every modern coding agent: a
+frontier model **plans**, and a fast SambaNova model **executes** the dozens of edits and test runs
+— then how to make the whole thing measurably better from its own traces.
+
+| Session | Topic | Notebook | Recording | Date |
+|---------|-------|----------|-----------|------|
+| 1 | The Coding-Agent Harness | TBD | TBD | TBD |
+| 2 | Scaling the Executors | [`season_2/session_2/1_scaling_executors.ipynb`](notebooks/season_2/session_2/1_scaling_executors.ipynb) | TBD | Sep 2, 2026 |
+| 3 | Giving the Agent an Environment | TBD | TBD | TBD |
+| 4 | Evaluating Coding Agents | TBD | TBD | TBD |
+| 5 | Improving Your Agent From Its Traces | TBD | TBD | TBD |
+| 6 | Closing the Loop in Production + Capstone | TBD | TBD | TBD |
+
+### Session 2 — Scaling the Executors
+
+Almost everything written about coding agents assumes **one developer, one agent, one laptop**. The
+moment you run N candidates for one task, or a team's worth of agents at once, you are operating a
+multi-tenant, inference-bound system. This notebook measures that shift end to end:
+
+1. **The latency budget** — where an agent's wall-clock actually goes (TTFT, tok/s, turns).
+2. **Concurrency** — fan out to N executors and see wall-clock track `max`, not `sum`.
+3. **Best-of-N** — N candidate patches, with the **pytest suite** as the selector, and `pass@k`.
+4. **The economics** — the real cost model, priced from the live model registry.
+
+Everything runs against SambaNova Cloud on a free-tier key, and **every number is measured at run
+time** — nothing is hard-coded. Expect the figures to differ from the committed outputs; `pass@1`
+is a distribution, not a constant.
+
+Only `SAMBANOVA_API_KEY` is required for this notebook.
+
+---
+
 ## Quick Start
 
 ### Prerequisites
@@ -122,13 +157,17 @@ dsd-deep-agents/
 │   └── sambanova_logo.png  # SambaNova branding
 └── notebooks/
     ├── utils.py            # Display utilities for Rich formatting
-    ├── session_1/          # The Rise of the Deep Agent
-    │   └── 0_create_agent.ipynb
-    ├── session_2/          # Coming soon
-    ├── session_3/          # Coming soon
-    ├── session_4/          # Coming soon
-    ├── session_5/          # Coming soon
-    └── session_6/          # Coming soon
+    │
+    ├── session_1/          # Season 1 — The Rise of the Deep Agent
+    ├── session_2/          # Season 1 — Agent Architecture Deep Dive
+    ├── session_3/          # Season 1 — Memory & Context Management
+    ├── session_4/          # Season 1 — Agent Skills & MCP
+    ├── session_5/          # Season 1 — Multi-Agent Workflows
+    ├── session_6/          # Season 1 — Evaluation & Production
+    │
+    └── season_2/           # Season 2 — Coding Agents That Improve
+        └── session_2/      # Scaling the Executors
+            └── 1_scaling_executors.ipynb
 ```
 
 ---

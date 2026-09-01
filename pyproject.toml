@@ -24,6 +24,10 @@ dependencies = [
     "reportlab>=4.0.0",
     "pypdf>=4.0.0",
     "matplotlib>=3.8.0",
+    # Season 2 — coding agents (direct OpenAI-compatible calls to SambaNova Cloud)
+    "openai>=1.40.0",
+    "pandas>=2.0.0",
+    "pytest>=8.0.0",
 ]
 
 [build-system]
