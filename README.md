@@ -10,7 +10,7 @@
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.6+-green.svg)](https://github.com/langchain-ai/langgraph)
-[![SambaNova](https://img.shields.io/badge/SambaNova-MiniMax--M2.7-purple.svg)](https://cloud.sambanova.ai/)
+[![SambaNova](https://img.shields.io/badge/SambaNova-MiniMax--M3-purple.svg)](https://cloud.sambanova.ai/)
 
 Build production-ready AI agents from the ground up using LangGraph and SambaNova Cloud.
 
