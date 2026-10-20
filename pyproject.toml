@@ -28,6 +28,10 @@ dependencies = [
     "openai>=1.40.0",
     "pandas>=2.0.0",
     "pytest>=8.0.0",
+    # Season 2 session 3 - sandboxed agent environment
+    "daytona>=0.100.0",
+    "mcp>=1.0.0",
+    "nest-asyncio>=1.6.0",
 ]
 
 [build-system]

@@ -44,10 +44,28 @@ frontier model **plans**, and a fast SambaNova model **executes** the dozens of 
 |---------|-------|----------|-----------|------|
 | 1 | The Coding-Agent Harness | TBD | TBD | TBD |
 | 2 | Scaling the Executors | [`season_2/session_2/1_scaling_executors.ipynb`](notebooks/season_2/session_2/1_scaling_executors.ipynb) | TBD | Sep 2, 2026 |
-| 3 | Giving the Agent an Environment | TBD | TBD | TBD |
+| 3 | Giving the Agent an Environment | [`season_2/session_3/1_agent_environment.ipynb`](notebooks/season_2/session_3/1_agent_environment.ipynb) | TBD | Oct 21, 2026 |
 | 4 | Evaluating Coding Agents | TBD | TBD | TBD |
 | 5 | Improving Your Agent From Its Traces | TBD | TBD | TBD |
 | 6 | Closing the Loop in Production + Capstone | TBD | TBD | TBD |
+
+### Session 3 — Giving the Agent an Environment
+
+A language model cannot edit a file or run a test. Something has to turn its text into an action
+and report back what happened — that something is the **environment**, and it is most of what a
+coding agent actually is. This notebook builds one:
+
+1. **A sandbox** — a real, isolated machine per run via [Daytona](https://www.daytona.io/),
+   because the code is model-written and N agents cannot share a working tree.
+2. **A toolbelt** — `list_files` / `read_file` / `write_file` / `run_tests` over that sandbox,
+   with a dispatcher that turns bad tool calls into correctable errors instead of tracebacks.
+3. **Tests as the terminating condition** — the SWE-bench `FAIL_TO_PASS` / `PASS_TO_PASS` shape,
+   plus the one-line check that stops "fix it" from meaning "delete the failing test".
+4. **Git as the deliverable** — a branch, a commit, and a reviewable PR-style patch.
+5. **MCP** — a server in ~20 lines, its tools discovered over the protocol and bridged into the
+   same loop, so the agent can ask about things that are not in the repo.
+
+Needs `SAMBANOVA_API_KEY` **and** `DAYTONA_API_KEY` (both free tier).
 
 ### Session 2 — Scaling the Executors
 
@@ -166,8 +184,10 @@ dsd-deep-agents/
     ├── session_6/          # Season 1 — Evaluation & Production
     │
     └── season_2/           # Season 2 — Coding Agents That Improve
-        └── session_2/      # Scaling the Executors
-            └── 1_scaling_executors.ipynb
+        ├── session_2/      # Scaling the Executors
+        │   └── 1_scaling_executors.ipynb
+        └── session_3/      # Giving the Agent an Environment
+            └── 1_agent_environment.ipynb
 ```
 
 ---
