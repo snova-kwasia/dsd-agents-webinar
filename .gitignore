@@ -23,3 +23,4 @@ notebooks/session_5/*.png
 
 # Session 6 runtime
 notebooks/session_6/outputs/
+.env.*
