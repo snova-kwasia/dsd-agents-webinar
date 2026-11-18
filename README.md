@@ -45,9 +45,30 @@ frontier model **plans**, and a fast SambaNova model **executes** the dozens of 
 | 1 | The Coding-Agent Harness | TBD | TBD | TBD |
 | 2 | Scaling the Executors | [`season_2/session_2/1_scaling_executors.ipynb`](notebooks/season_2/session_2/1_scaling_executors.ipynb) | TBD | Sep 2, 2026 |
 | 3 | Giving the Agent an Environment | [`season_2/session_3/1_agent_environment.ipynb`](notebooks/season_2/session_3/1_agent_environment.ipynb) | TBD | Oct 21, 2026 |
-| 4 | Evaluating Coding Agents | TBD | TBD | TBD |
+| 4 | Evaluating Coding Agents | [`season_2/session_4/1_evaluating_agents.ipynb`](notebooks/season_2/session_4/1_evaluating_agents.ipynb) | TBD | Nov 18, 2026 |
 | 5 | Improving Your Agent From Its Traces | TBD | TBD | TBD |
 | 6 | Closing the Loop in Production + Capstone | TBD | TBD | TBD |
+
+### Session 4 — Evaluating Coding Agents
+
+Session 3 turned a red suite green. Once. A single green run is an anecdote — it cannot tell a
+solved task from a lucky one, or from an agent that quietly deleted the failing test. All three
+exit zero.
+
+Coding agents have a luxury most agents don't: **ground truth**. But that answers only the first
+of three questions, so this notebook builds all of them:
+
+1. **Did it work?** A held-out task set in the SWE-bench `FAIL_TO_PASS` / `PASS_TO_PASS` shape.
+2. **Does it work reliably?** **pass@k** over repeated attempts.
+3. **Did it work for the right reasons?** Rule-based **trajectory evaluation** — spin, repeated
+   calls, malformed calls — split into an efficiency score and **hard gates**. (A run that cheats
+   by deleting the test scores *perfect* efficiency; only a gate catches it.)
+4. **Is the patch any good?** A narrowly-scoped LLM judge — never allowed to decide correctness.
+
+Then it wires the lot into **LangSmith** as datasets and tracked experiments, and closes with a
+**regression gate** baselined on the incumbent model's own scorecard.
+
+Needs `SAMBANOVA_API_KEY`, `DAYTONA_API_KEY` and `LANGSMITH_API_KEY` (all free tier).
 
 ### Session 3 — Giving the Agent an Environment
 
@@ -186,8 +207,10 @@ dsd-deep-agents/
     └── season_2/           # Season 2 — Coding Agents That Improve
         ├── session_2/      # Scaling the Executors
         │   └── 1_scaling_executors.ipynb
-        └── session_3/      # Giving the Agent an Environment
-            └── 1_agent_environment.ipynb
+        ├── session_3/      # Giving the Agent an Environment
+        │   └── 1_agent_environment.ipynb
+        └── session_4/      # Evaluating Coding Agents
+            └── 1_evaluating_agents.ipynb
 ```
 
 ---
